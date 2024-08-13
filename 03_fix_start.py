@@ -13,9 +13,10 @@ Dica: s.replace(stra, strb) retorna uma versão da string s
 onde todas as instancias de stra foram substituidas por strb.
 """
 
-def fix_start(s):
+def fix_start(s: str):
     # +++ SUA SOLUÇÃO +++
-    return
+    first_caracter = s[:1]
+    return first_caracter+s[1:].replace(first_caracter, "*")
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
