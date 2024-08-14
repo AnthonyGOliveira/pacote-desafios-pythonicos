@@ -9,9 +9,23 @@ por 'good' e retorne a string resultante.
 Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 """
 
-def not_bad(s):
+
+def not_bad(s: str):
     # +++ SUA SOLUÇÃO +++
-    return
+    words: list[str] = s.split(' ')
+    not_value = False
+    bad_value = False
+    not_index = None
+    final = ""
+    for i, w in enumerate(words):
+        if w == 'not':
+            not_value = True
+            not_index = i
+        if 'bad' in w and not_value == True:
+            bad_value = True
+            final = w[3:]
+            break
+    return ' '.join(words[0:not_index] + ['good'+final]) if not_value and bad_value and not_index != None else s
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
